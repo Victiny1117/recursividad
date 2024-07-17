@@ -85,3 +85,45 @@ class circleList {
         return start == null;
     }
 }
+
+public class Examen_ziad_recursividad {
+   
+    static stack invStack(stack s1, stack s2) {
+        nodeS auxNode;
+        if (!s1.cnull()) {
+            auxNode = s1.unstack();
+            s2.stack(auxNode.c);
+            invStack(s1, s2);
+        } 
+            return s2;
+        }
+        
+        static void printWords(circleList l1) {
+            String word;
+            if (!l1.cnull() && l1.start != l1.end) {
+                word = l1.actElement();
+                System.out.print(" " + word + " ");
+                printWords(l1);
+            }
+        }
+        static int fact(int a) {
+            if (a <= 0) {
+                return 1;
+            } else {
+                return a * fact(a - 1);
+            }
+        }
+        static int exp(int a, int b) {
+            if (b == 0) {
+                return 1;
+            } else {
+                return a * exp(a, b - 1);
+            }   
+        }
+        static int plusArray(int[] array, int a) {
+            if (a < 0) {
+                return 0;
+            }
+                return array[a] + plusArray(array, a - 1);
+            }
+        }
