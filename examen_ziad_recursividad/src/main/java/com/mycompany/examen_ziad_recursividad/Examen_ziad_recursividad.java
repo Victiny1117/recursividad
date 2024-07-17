@@ -54,3 +54,34 @@ class stack {
         
     }
 }
+
+class circleList {
+    nodeCL start = null;
+    nodeCL end = null;
+   
+    void add(String word) {
+        nodeCL nNode = new nodeCL(word);
+        if (start == null) {
+            start = nNode;
+            end = nNode;
+            nNode.next = start;
+        } else {
+            end.next = nNode;
+            end = nNode;
+            end.next = start;
+        }
+    }
+       
+        String actElement() {
+            nodeCL act = null;
+         if (start != null && act != start) {
+            act = start;
+               start = act.next;
+        }  
+        return act.word;
+        }
+        
+    boolean cnull() {
+        return start == null;
+    }
+}
