@@ -22,3 +22,35 @@ class nodeS {
     }
 
 }
+
+class stack {
+    nodeS top = null;
+
+    void stack(int c) {
+        nodeS newN = new nodeS(c);
+        newN.next = top;
+        top = newN;
+    }
+
+    nodeS unstack() {
+        if (top == null) {
+            return null;
+        }
+        nodeS nUnstacked = top;
+        top = top.next;
+        return nUnstacked;
+    }
+
+    boolean cnull() {
+        return top == null;
+    }
+    
+    void print() {
+        nodeS act = top;
+        while (act != null) {
+            System.out.println(act.c);
+            act = act.next;
+        }
+        
+    }
+}
